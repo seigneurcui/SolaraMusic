@@ -150,15 +150,15 @@ export const onRequest: PagesFunction<Env> = async (context) => {
 	const patched = original.replace('</body>', LOGOUT_BUTTON_SCRIPT + '</body>')
 
 	// 复制原始 headers，移除 Content-Encoding（text() 已解压，避免二次解压错误）
-	const newHeaders = new Headers(response.headers)
-	newHeaders.delete('Content-Encoding')
-	newHeaders.set('Content-Length', new TextEncoder().encode(patched).length.toString())
+	//~ const newHeaders = new Headers(response.headers)
+	//~ newHeaders.delete('Content-Encoding')
+	//~ newHeaders.set('Content-Length', new TextEncoder().encode(patched).length.toString())
 
-	return new Response(patched, {
-	  status: response.status,
-	  statusText: response.statusText,
-	  headers: newHeaders,
-	})
+	//~ return new Response(patched, {
+	  //~ status: response.status,
+	  //~ statusText: response.statusText,
+	  //~ headers: newHeaders,
+	//~ })
 	
 
 // 旧写法 ❌ 继承了 Content-Encoding，导致浏览器二次解压失败
