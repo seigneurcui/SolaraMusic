@@ -96,8 +96,8 @@ const LOGIN_HTML = (error: string) => `<!doctype html>
 </head>
 <body>
   <div class="box">
-    //~ <div class="header">
-    <div class="logo-icon">📖</div>
+    <div class="header">
+     
       <img src="/icon.png" alt="logo" onerror='this.style.display="none"'>
       <h1>Solara Musique</h1>
       <p>请输入访问密码以继续</p>
